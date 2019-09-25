@@ -1,5 +1,5 @@
 const express = require("express");
-// const path = require("path");
+const path = require("path");
 var exphbs = require("express-handlebars");
 
 const routes = require('./app/routing/index.js');
@@ -9,7 +9,8 @@ const routes = require('./app/routing/index.js');
 // Sets up the Express App
 // =============================================================
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -17,7 +18,8 @@ app.set("view engine", "handlebars");
 
 // Sets up the Express app to handle data parsing
 
-  app.use('/', routes);
+app.use('/', routes);
+app.use(express.static(path.join(__dirname, 'app')));
 
 // Turn on that server!
 app.listen(PORT, () => {

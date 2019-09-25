@@ -1,0 +1,25 @@
+div.bottomPadding {
+    
+    padding-bottom: 1rem;
+}
+
+h5, p, li {
+
+  color:#fff;
+}
+
+
+div.container div.switch, div.input-field {
+  color: #000;
+  background-color: rgb(128, 164, 179);
+  border-radius: 15px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+                
+div.name div.input-field {
+                  
+  background-color: rgb(54, 90, 105);
+  padding: 2rem;
+}
