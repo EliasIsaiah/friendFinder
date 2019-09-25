@@ -1,7 +1,8 @@
 const routes = require('express').Router();
 
-routes.get('/', (req, res) => {
+routes.post('/', (req, res) => {
   res.status(200).json({ message: 'apiRoutes Connected!' });
+  console.log(req.body);
 });
 
 module.exports = routes;
