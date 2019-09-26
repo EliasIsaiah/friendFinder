@@ -18,7 +18,7 @@ div.container div.switch, div.input-field {
   border: 1px solid black; */
 }
                 
-div.name div.input-field {
+.blueTheme div.input-field {
                   
   background-color: rgb(54, 90, 105);
   padding: 2rem;
