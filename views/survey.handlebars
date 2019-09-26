@@ -15,15 +15,15 @@
       <div class="row name">
         <div class="row">
           <div class="input-field col s12">
+            <h5>Name</h5>
             <input id="first_name" type="text" class="validate">
-            <label for="first_name">Name</label>
           </div>
         </div>
-        {{each surveyQuestion}}
+        {{#each surveyQuestions}}
         <div class="row">
           <div class="input-field col s12 bottomPadding">
-            <h5>{{question}}</h5>
-            <select id="mondays">
+            <h5>{{this.question}}</h5>
+            <select id="{{this.id}}">
               <option value="" disabled selected>Choose your option</option>
               <option value="1">1 (strongly disagree)</option>
               <option value="2">2</option>
@@ -34,73 +34,7 @@
             </select>
           </div>
         </div>
-
-        {{!-- <div class="row">
-          <div class="input-field col s12 bottomPadding">
-            <h5>You hate Mondays</h5>
-            <select id="mondays">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">1 (strongly disagree)</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 (strongly agree)</option>
-
-
-            </select>
-            {{!-- <label>Materialize Select</label> --}}
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 bottomPadding">
-            <h5>You love lasagna</h5>
-            <select id="lasagna">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">1 (strongly disagree)</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 (strongly agree)</option>
-
-            </select>
-            {{!-- <label>Materialize Select</label> --}}
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 bottomPadding">
-            <h5>You are not a morning person</h5>
-            <select id="morning">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">1 (strongly disagree)</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 (strongly agree)</option>
-
-            </select>
-            {{!-- <label>Materialize Select</label> --}}
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 bottomPadding">
-            <h5>You live with a dog named Odie</h5>
-            <select id="odie">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">1 (strongly disagree)</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 (strongly agree)</option>
-
-            </select>
-            {{!-- <label>Materialize Select</label> --}}
-          </div>
-        </div> --}}
-
-
+        {{/each}}
     </form>
     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
       <i class="material-icons right">send</i>

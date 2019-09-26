@@ -17,10 +17,8 @@ $( document ).ready(function() {
 
         console.log("reached testButton handler");
         console.log($('#theForm').serialize());
-        
-        const mondays, lasagna, mornings, odie;
 
-        let mondays = $("#mondays").val();
+        let mondays = $("#Question1").val();
 
 
         $('select').formSelect('getSelectedValues');
