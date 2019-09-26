@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+
 var exphbs = require("express-handlebars");
 
 const routes = require('./app/routing/index.js');
@@ -17,6 +18,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use('/', routes);
 app.use(express.static(path.join(__dirname, 'app')));
