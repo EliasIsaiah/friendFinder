@@ -3,7 +3,8 @@ $( document ).ready(function() {
     console.log( "ready!" );
     $('select').formSelect();
 
-    $("button").on("submit", function(event) {
+    console.log($("button"));
+    $("body").on("submit", function(event) {
         event.preventDefault();
         console.log("submitted!");
         $.post('/api', $('#theForm').serialize())
@@ -16,7 +17,11 @@ $( document ).ready(function() {
 
         console.log("reached testButton handler");
         console.log($('#theForm').serialize());
-        console.log($("#mondays").val());
+        
+        const mondays, lasagna, mornings, odie;
+
+        let mondays = $("#mondays").val();
+
 
         $('select').formSelect('getSelectedValues');
 

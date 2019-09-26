@@ -19,8 +19,23 @@
             <label for="first_name">Name</label>
           </div>
         </div>
-
+        {{each surveyQuestion}}
         <div class="row">
+          <div class="input-field col s12 bottomPadding">
+            <h5>{{question}}</h5>
+            <select id="mondays">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">1 (strongly disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (strongly agree)</option>
+
+            </select>
+          </div>
+        </div>
+
+        {{!-- <div class="row">
           <div class="input-field col s12 bottomPadding">
             <h5>You hate Mondays</h5>
             <select id="mondays">
@@ -83,7 +98,7 @@
             </select>
             {{!-- <label>Materialize Select</label> --}}
           </div>
-        </div>
+        </div> --}}
 
 
     </form>
