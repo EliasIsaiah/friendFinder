@@ -1,5 +1,6 @@
 const routes = require('express').Router();
 const path = require("path");
+const surveyQuestions = require("../data/questions.js");
 
 
 routes.get('/', (req, res) => {
@@ -10,7 +11,8 @@ routes.get('/', (req, res) => {
 
 routes.get('/survey', (req, res) => {
   // res.sendFile(path.join(__dirname, "..", "public", "survey.html"));
-  res.render("survey");
+  console.log(surveyQuestions);
+  res.render("survey", {surveyQuestions: surveyQuestions});
 })
 
 module.exports = routes;
