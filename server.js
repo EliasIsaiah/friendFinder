@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'app')));
 
 app.use('/', routes);
 
+
 // Turn on that server!
 app.listen(PORT, () => {
   console.log('App listening on port 3000');
