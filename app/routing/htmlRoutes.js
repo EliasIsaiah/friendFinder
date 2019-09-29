@@ -15,4 +15,10 @@ routes.get('/survey', (req, res) => {
   res.render("survey", {surveyQuestions: surveyQuestions});
 })
 
+routes.get('/test', (req, res) => {
+  // res.sendFile(path.join(__dirname, "..", "public", "survey.html"));
+  // console.log(surveyQuestions);
+  res.render("formTest");
+})
+
 module.exports = routes;
