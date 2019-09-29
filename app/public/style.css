@@ -24,3 +24,7 @@ div.container div.switch, div.input-field {
   padding: 2rem;
   color: #fff;
 }
+
+div.modal p{
+  color: #000;
+}

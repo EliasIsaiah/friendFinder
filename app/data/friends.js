@@ -54,7 +54,7 @@ friends = {
             ]
         },
         {
-            "id": 5,
+            "id": 4,
             "name":"Michelle Obama",
             "photo": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Michelle_Obama_2013_official_portrait.jpg",
             "answers": [
@@ -73,9 +73,11 @@ friends = {
     ],
 
     addFriend: function(name, photo, answers) {
-        friendsArr.push(
-            {id: this.friendsArr.length++, name: name, photo: photo, answers: answers}
+        this.friendsArr.push(
+            {id: this.friendsArr.length + 1, name: name, photo: photo, answers: answers}
             );
+
+        console.log("friendsArr", this.friendsArr);
     }
 }
 

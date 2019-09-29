@@ -15,13 +15,13 @@
         <div class="row">
           <div class="input-field col s12">
             <h5>Name</h5>
-            <input id="name" type="text" class="validate" required="" aria-required="true">
+            <input id="name" type="text" class="validate" aria-required="true" required>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <h5>Profile Picture URL (Optional)</h5>
-            <input id="pictureURL" type="text" class="validate">
+            <input id="pictureURL" type="url" class="validate" required>
           </div>
         </div>
 
@@ -30,9 +30,9 @@
           <div class="input-field col s12 bottomPadding">
             <h5>{{this.question}}</h5>
             
-            <select id="{{this.id}}" required="" aria-required="true">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">1 (strongly disagree)</option>
+            <select id="{{this.id}}" aria-required="true" required>
+              <option disabled name="default" value="">Choose your option</option>
+              <option value="1" selected>1 (strongly disagree)</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -43,10 +43,24 @@
         </div>
         {{/each}}
         
-    </form>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <button id="submit" class="btn waves-effect waves-light" type="submit" name="submit">Submit
       <i class="material-icons right">send</i>
     </button>
+    </form>
+  </div>
+
+    <!-- Modal Trigger -->
+  {{!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> --}}
+
+  <!-- Modal Structure -->
+  <div id="messageModal" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
   </div>
 
 {{!-- <a class="test waves-effect waves-light btn">button</a> --}}
