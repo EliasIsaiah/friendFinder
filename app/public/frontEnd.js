@@ -11,8 +11,6 @@ $(document).ready(function () {
 
     invalid = function () {
         
-        console.log("entered invalid");
-
         const name = $("#name").val();
         const picURL = $("#pictureURL").val();
 
@@ -27,7 +25,7 @@ $(document).ready(function () {
         };
 
         for (let i = 1; i < 11; i++) {
-            if ($(`#question${i}`).val() === "placeholder") {
+            if ($(`#question${i}`).val() == null) {
                 console.log($(`#question${i}`).val());
                 console.log("detected invalid select");
                 return true
@@ -42,6 +40,7 @@ $(document).ready(function () {
     $("#submit").on("click", (event) => {
         console.log(event);
         if (!invalid(event)) {
+            console.log("invalid is false");
             $("#theForm")[0].reset();
             event.preventDefault();
         }
