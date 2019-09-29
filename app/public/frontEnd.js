@@ -5,9 +5,18 @@ $(document).ready(function () {
     $('.modal').modal();
     
     var instance = M.Modal.getInstance($(".modal"));
-    instance.open()
+    // instance.open()
+
+    const $modal = $("#messageModal");
+    const $modalP = $("#messageModal p");
 
     $('select').formSelect();
+
+    modalNotify = function(message) {
+        $modalP.text("");
+        $modalP.text(message);
+        instance.open(); 
+    }
 
     invalid = function () {
         
@@ -26,8 +35,7 @@ $(document).ready(function () {
 
         for (let i = 1; i < 11; i++) {
             if ($(`#question${i}`).val() == null) {
-                console.log($(`#question${i}`).val());
-                console.log("detected invalid select");
+                modalNotify("Form Incomplete");
                 return true
             }
         }
