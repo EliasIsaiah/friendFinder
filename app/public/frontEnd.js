@@ -1,25 +1,46 @@
 // A $( document ).ready() block.
 $(document).ready(function () {
-    
-    
+
+
     $('.modal').modal();
-    
+
     var instance = M.Modal.getInstance($(".modal"));
     // instance.open()
 
     const $modal = $("#messageModal");
     const $modalP = $("#messageModal p");
 
+    getMatch = function () {
+
+        let answers = [];
+        for (let i = 1; i < 11; i++) {
+            console.log($(`#question${i}`).val());
+            answers.push($(`#question${i}`).val());
+        }
+
+        const data = {
+
+            name: $("#name").val(),
+            photo: $("#pictureURL").val(),
+            answers: answers
+        }
+
+        console.log("data", data)
+
+        return data;
+
+    }
+
     $('select').formSelect();
 
-    modalNotify = function(message) {
+    modalNotify = function (message) {
         $modalP.text("");
         $modalP.text(message);
-        instance.open(); 
+        instance.open();
     }
 
     invalid = function () {
-        
+
         const name = $("#name").val();
         const picURL = $("#pictureURL").val();
 
@@ -49,6 +70,9 @@ $(document).ready(function () {
         console.log(event);
         if (!invalid(event)) {
             console.log("invalid is false");
+
+            $.post('/api', getMatch()).then(data => console.log(data));
+
             $("#theForm")[0].reset();
             event.preventDefault();
         }
@@ -61,10 +85,10 @@ $(document).ready(function () {
 
     //     let answers = [];
 
-    //     for (let i = 1; i < 11; i++) {
-    //         console.log($(`#question${i}`).val());
-    //         answers.push($(`#question${i}`).val());
-    //     }
+    // for (let i = 1; i < 11; i++) {
+    //     console.log($(`#question${i}`).val());
+    //     answers.push($(`#question${i}`).val());
+    // }
     //     // console.log(name);
     //     console.log(answers);
 
@@ -73,9 +97,9 @@ $(document).ready(function () {
     //     $.post('/api', { "testKey": "teststring" }).then(data => console.log(data));
     // })
 
-    let formObj = {
-        testKey: "testString"
-    }
+    // let formObj = {
+    //     testKey: "testString"
+    // }
     /*     $("a.test").on("click", function(event) {
     
             console.log("reached testButton handler");
