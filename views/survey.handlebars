@@ -31,8 +31,8 @@
             <h5>{{this.question}}</h5>
             
             <select id="{{this.id}}" aria-required="true" required>
-              <option disabled name="default" value="">Choose your option</option>
-              <option value="1" selected>1 (strongly disagree)</option>
+              <option selected disabled name="default" value="">Choose your option</option>
+              <option value="1">1 (strongly disagree)</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -54,12 +54,12 @@
 
   <!-- Modal Structure -->
   <div id="messageModal" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+    <div id="modal-content">
+      <h4 id="modalHeader"></h4>
+      {{!-- <p id="modalP"></p> --}}
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
     </div>
   </div>
 
