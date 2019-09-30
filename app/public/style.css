@@ -28,3 +28,9 @@ div.container div.switch, div.input-field {
 div.modal p{
   color: #000;
 }
+
+div.matchImg {
+  height: 500px;
+  width: auto;
+  /* background: ccontain; */
+}

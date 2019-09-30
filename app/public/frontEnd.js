@@ -8,13 +8,14 @@ $(document).ready(function () {
     // instance.open()
 
     const $modal = $("#messageModal");
-    const $modalP = $("#messageModal p");
+    const $modalP = $("#modalP");
+    const $modalH = $("#modalHeader");
 
     getMatch = function () {
 
         let answers = [];
         for (let i = 1; i < 11; i++) {
-            console.log($(`#question${i}`).val());
+            // console.log($(`#question${i}`).val());
             answers.push($(`#question${i}`).val());
         }
 
@@ -25,7 +26,7 @@ $(document).ready(function () {
             answers: answers
         }
 
-        console.log("data", data)
+        // console.log("data", data)
 
         return data;
 
@@ -34,8 +35,21 @@ $(document).ready(function () {
     $('select').formSelect();
 
     modalNotify = function (message) {
-        $modalP.text("");
-        $modalP.text(message);
+        $modalH.text(message);
+        instance.open();
+    }
+
+    modalMatched = function (name, imageURL) {
+        $modalH.text(`You matched with: ${name}`);
+        let matchImg = $("<div>")
+        .attr("class", "matchImg")
+        .css({
+            'background': `center / contain no-repeat url(${imageURL})`,
+
+        });
+
+        $("#modal-content").append(matchImg);
+
         instance.open();
     }
 
@@ -45,12 +59,12 @@ $(document).ready(function () {
         const picURL = $("#pictureURL").val();
 
         if (name === "") {
-            console.log("name is empty");
+            // console.log("name is empty");
             return true
         };
 
         if (picURL === "") {
-            console.log("url is empty/invalid");
+            // console.log("url is empty/invalid");
             return true
         };
 
@@ -67,56 +81,25 @@ $(document).ready(function () {
     console.log("ready!");
 
     $("#submit").on("click", (event) => {
+
+        let matchName, matchPhoto;
+
+
         console.log(event);
         if (!invalid(event)) {
-            console.log("invalid is false");
+            // console.log("invalid is false");
 
-            $.post('/api', getMatch()).then(data => console.log(data));
+            $.post('/api', getMatch()).then(({ id, name, photo, ...rest }) => {
+
+                matchName = name;
+                matchPhoto = photo;
+                console.log(matchName, matchPhoto);
+                modalMatched(matchName, matchPhoto);
+            })
 
             $("#theForm")[0].reset();
             event.preventDefault();
         }
     });
 
-
-    // console.log($("button"));
-    // $("button").on("click", function (event) {
-    //     console.log("clicked!");
-
-    //     let answers = [];
-
-    // for (let i = 1; i < 11; i++) {
-    //     console.log($(`#question${i}`).val());
-    //     answers.push($(`#question${i}`).val());
-    // }
-    //     // console.log(name);
-    //     console.log(answers);
-
-
-    //     console.log("submitted!");
-    //     $.post('/api', { "testKey": "teststring" }).then(data => console.log(data));
-    // })
-
-    // let formObj = {
-    //     testKey: "testString"
-    // }
-    /*     $("a.test").on("click", function(event) {
-    
-            console.log("reached testButton handler");
-            console.log($('#theForm').serialize());
-    
-            let mondays = $("#question1").val();
-            console.log("mondays", mondays);
-    
-    
-            $('select').formSelect('getSelectedValues');
-    
-            testObj = {
-                testKey: "testString"
-            }
-    
-            $.post('/api', testObj, function (data) {
-                console.log(data);
-            })
-        }) */
 });

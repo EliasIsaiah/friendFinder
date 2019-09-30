@@ -9,11 +9,11 @@ TODO:
 
   - [ ] .gitignore .env -->
 
-- [ ] successfully collect information from form into an object and pass it into the api
+- [x] successfully collect information from form into an object and pass it into the api
 
-- [ ] successfully get data from the api
+- [x] successfully get data from the api
 
-- [ ] write the code to calculate "friend" matches
+- [x] write the code to calculate "friend" matches
 
 - [ ] host the application on heroku
 
