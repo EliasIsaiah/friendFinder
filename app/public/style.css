@@ -3,7 +3,7 @@ div.bottomPadding {
     padding-bottom: 1rem;
 }
 
-h5, p, li {
+h5, p, li, h1 {
 
   color:#fff;
 }
@@ -33,4 +33,15 @@ div.matchImg {
   height: 500px;
   width: auto;
   /* background: ccontain; */
+}
+
+div.container.home {
+  background: center/contain url(./images/peach.jpg);
+  height: 100vh;
+  background-size: 40%;
+}
+
+div.homePage {
+
+  margin: 30vh auto;
 }
