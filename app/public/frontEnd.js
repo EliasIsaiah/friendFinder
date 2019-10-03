@@ -93,6 +93,7 @@ $(document).ready(function () {
 
                 matchName = name;
                 matchPhoto = photo;
+                console.log(name, photo);
                 console.log(matchName, matchPhoto);
                 modalMatched(matchName, matchPhoto);
             })

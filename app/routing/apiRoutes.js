@@ -4,7 +4,7 @@ const friends = require("../data/friends.js")
 routes.post('/', (req, res) => { //localhost:3000/api
   // res.status(200).json({ message: 'apiRoutes Connected!' });
   res.json(friends.addFriend(req.body.name, req.body.photo, req.body.answers));
-  console.log(req.body);
+  console.log("data sent in", req.body);
   // friends.addFriend(req.body.name, req.body.photo, req.body.answers);
 });
 
