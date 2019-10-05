@@ -82,8 +82,7 @@ friends = {
         }) //this last bit prevents the entire differences array from being added to each friend object
         
 
-        //The next line of code renders most of what was done above redundant, as I could have done it from the beginning. But oh well, at least I wrote a fun way to add each friend's respective difference to the appropriate object.
-        matchIndex = differencesArr.indexOf(Math.min(...differencesArr));
+        matchIndex = differencesArr.indexOf(Math.min(...differencesArr)); //Find the smallest number in differencesArr and then return the index of that, which is the index of its corresponding friend
         return this.friendsArr[matchIndex];
     },
 
