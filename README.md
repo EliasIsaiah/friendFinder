@@ -6,8 +6,6 @@ Node and Express powered online dating (friending?) application
     "express-handlebars": "^3.1.0",
     "path": "^0.12.7"
 
-TODO:
-
 ### What Is It?
 
 FriendFinder is an online dating or friending service that matches users based off of the results of a survey that they fill out. Upon submission the application will notify the user with the "friend" in the database that is the best match.
